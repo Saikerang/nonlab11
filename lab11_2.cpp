@@ -1,19 +1,28 @@
 #include<iostream>
 #include<string>
-
+#include<ctime>
+#include<cstdlib>
 using namespace std;
 
 string cardNames[] = {"","A","2","3","4","5","6","7","8","9","10","J","Q","K"};
 int cardScores[] = {0,1,2,3,4,5,6,7,8,9,10,10,10,10};
 
 int drawCard(void){
-	//Write the function to random the number from 1 to 13 and return that random number.
-	//srand() is used in main(). Do not use srand() here.
+	int random = rand() % 13+1;
+	return random;
 }
 
+
 int calScore(int x,int y,int z){
-	//Write the function to calculate the score with is the rightmost digit of summation of the scores from three cards.
-	//Return the score. 
+	int x,y,z = rand()%14;
+	x=y=z;
+	int point = cardScores[x]+cardScores[y]+cardScores[z];
+	if (point > 10){
+		return point-10;
+	}else{
+		return point;
+	}
+	
 }
 
 int findYugiAction(int s){	
@@ -26,12 +35,14 @@ int findYugiAction(int s){
 }
 
 void checkWinner(int p, int y){
-	// Write condition for cout in this function
-	cout << "\n---------------------------------\n";
-	cout <<   "|             Draw!!!           |"; // when p is equal to y
-	cout <<   "|         Player wins!!!        |"; // when p is greater than y
-	cout <<   "|          Yugi wins!!!         |"; // when p is less than y
-	cout << "\n---------------------------------\n";
+        cout << "\n---------------------------------\n";
+        if(_____________) 
+            cout <<   "|             Draw!!!           |"; 
+        _____________ 
+            cout <<   "|         Player wins!!!        |"; 
+        _____________ 
+            cout <<   "|          Yugi wins!!!         |"; 
+        cout << "\n---------------------------------\n";
 }
 
 int main(){	
